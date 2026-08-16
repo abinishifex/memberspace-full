@@ -34,7 +34,7 @@ router.post('/register', async (req, res) => {
 // 2. LOGIN ROUTE
 router.post('/login', async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password } = req.body || {};
         const normalizedEmail = String(email || '').trim().toLowerCase();
         
         if (!normalizedEmail || !password) {
